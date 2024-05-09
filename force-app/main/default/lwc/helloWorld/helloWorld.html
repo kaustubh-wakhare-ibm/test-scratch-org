@@ -1,5 +1,9 @@
 <template>
     <!-- <div>{fullName}</div> -->
-    <input type="text" onkeyup={changeTitle}>
-    <div>{fullName} is class of {title}</div>
+    <lightning-card  title="Zero To Hero">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Enter some text" onkeyup={changeTitle}></lightning-input>
+            <div>{fullName} is class of {title}</div>
+        </div>
+    </lightning-card>
 </template>
