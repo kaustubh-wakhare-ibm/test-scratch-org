@@ -1,9 +1,21 @@
+<!-- sldsValidatorIgnore -->
 <template>
-    <!-- <div>{fullName}</div> -->
     <lightning-card  title="Zero To Hero">
-        <div class="slds-m-around_medium">
+        <div class="slds-var-m-around_medium">
             <lightning-input type="text" label="Enter some text" onkeyup={changeTitle}></lightning-input>
             <div>{fullName} is class of {title}</div>
+        </div>
+    </lightning-card>
+    <lightning-card  title="@track decorator">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" label="Enter City" onkeyup={changeCity}></lightning-input>
+            <div>{address.city} is the City</div>
+        </div>
+    </lightning-card>
+    <lightning-card  title="Getters method in LWC">
+        <div class="slds-var-m-around_medium">
+            <div>first username is {firstUser}</div>
+            <div>Multiply of {num1} and {num2} is {numMuliplication}</div>
         </div>
     </lightning-card>
 </template>
