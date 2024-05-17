@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Looping Component for:each">
+        <div class="slds-var-m-around_medium">
+            <!-- <div key={car}>{car}</div> -->
+            <ul class="slds-has-dividers_top-space">
+            <template for:each={carList} for:item="car">
+                <li key={car}  class="slds-item">{car}</li>
+            </template>
+            </ul>
+        </div>
+    </lightning-card>
+    <lightning-card title="Looping Component for:each loop with Objects">
+        <div class="slds-var-m-around_medium">
+            <ul  class="slds-has-dividers_top-space">
+            <template for:each={clothBrand} for:item="brand">
+                <!-- <div key={car}>{car}</div> -->
+                <li key={brand.id} class="slds-item">{brand.name}</li>
+            </template>
+        </ul>
+        </div>
+    </lightning-card>
+    <lightning-card title="Looping Component iterator:item">
+        <div class="slds-var-m-around_medium">
+            <ul class="slds-has-dividers_top-space">
+                <template iterator:cloth={clothBrand}>
+                    <div key={cloth.value.id}>
+                            <template lwc:if={cloth.first}>
+                                <div class="slds-box slds-theme_shade">
+                                    <strong>These are the cloth brands.</strong>
+                                </div>
+                            </template>
+                            <li class="slds-item">
+                                <strong>{cloth.value.name}-- </strong>
+                                {cloth.value.price}
+                            </li>
+                            <template lwc:if={cloth.last}>
+                                <div class="slds-box slds-theme_shade">
+                                    <strong>Thank You for visting our list.</strong>
+                                </div>
+                            </template>
+                    </div>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>
